@@ -10,9 +10,9 @@ terraform {
 }
 
 provider "aws" {
-  region              = "us-west-2"
+  region = "us-west-2"
   # shared_config_files = ["~/.aws/config"]
-  profile             = "dev-profile"
+  profile = "dev-profile"
 }
 
 module "compute" {
