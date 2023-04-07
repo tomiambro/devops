@@ -41,7 +41,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         id: hello
-        run: echo "::set-output name=PLAN::$(echo "Hello, world!")"
+        run: echo "::set-output name=PLAN::$(echo Hello, world!)"
 
       - uses: actions/github-script@0.9.0
         env:
@@ -49,7 +49,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            console.log(${{ steps.hello.outputs.PLAN }});
+            console.log("${{ steps.hello.outputs.PLAN }}");
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
