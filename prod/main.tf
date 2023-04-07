@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 module "compute" {
-  source = "./compute-module"
+  source = "../modules/compute-module"
 
   # Input Variables
   app_name = "web-app-1"
