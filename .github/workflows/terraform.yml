@@ -66,6 +66,9 @@ jobs:
 
             <details><summary>Show Plan</summary>
 
+            \`\`\`
+            This is code
+            \`\`\`
             \`\`\`${process.env.PLAN}\`\`\`
 
             </details>
