@@ -17,9 +17,6 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     defaults:
       run:
         working-directory: .
@@ -33,6 +30,9 @@ jobs:
           role-to-assume: arn:aws:iam::237435794960:role/Cognito_githubactionsAuth_Role
           role-session-name: samplerolesession
           aws-region: us-east-2
+        env:
+          AWS_PROFILE: dev-profile
+          AWS_SDK_LOAD_CONFIG: true
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
