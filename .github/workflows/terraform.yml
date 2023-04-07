@@ -32,7 +32,6 @@ jobs:
           aws-region: us-east-2
         env:
           AWS_PROFILE: dev-profile
-          AWS_SDK_LOAD_CONFIG: true
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
