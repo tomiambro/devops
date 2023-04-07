@@ -30,12 +30,12 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
 
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::237435794960:role/Cognito_githubactionsAuth_Role
-          role-session-name: samplerolesession
-          aws-region: us-east-2
+      # - name: configure aws credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     role-to-assume: arn:aws:iam::237435794960:role/Cognito_githubactionsAuth_Role
+      #     role-session-name: samplerolesession
+      #     aws-region: us-east-2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
