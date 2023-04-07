@@ -50,13 +50,13 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         # Route 53 zone must already exist for this to succeed!
-        run: "echo ::set-output name=PLAN::$(terraform plan -var pipeline=true -no-color)"
+        run: terraform plan -var pipeline=true -no-color >> $GITHUB_OUTPUT
         continue-on-error: true
 
       - uses: actions/github-script@0.9.0
         if: github.event_name == 'pull_request'
         env:
-          PLAN: "terraform\n${{ steps.plan.outputs.PLAN }}"
+          PLAN: "terraform\n${{ steps.plan.outputs.* }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -66,9 +66,6 @@ jobs:
 
             <details><summary>Show Plan</summary>
 
-            \`\`\`
-            This is code
-            \`\`\`
             \`\`\`${process.env.PLAN}\`\`\`
 
             </details>
