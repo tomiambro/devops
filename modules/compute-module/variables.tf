@@ -17,3 +17,9 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
+
+variable "how_many" {
+  description = "number of instances"
+  type        = number
+  default     = 1
+}

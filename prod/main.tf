@@ -15,10 +15,11 @@ provider "aws" {
 }
 
 module "compute" {
-  source = "./compute-module"
+  source = "../modules/compute-module"
 
   # Input Variables
   app_name = "web-app-1"
+  how_many = 2
   #   environment_name = "production"
   #   instance_type    = "t2.micro"
   #   create_dns_zone  = true
