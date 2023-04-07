@@ -41,7 +41,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         id: hello
-        run: "::set-output name=PLAN::$(echo Hello, world!)"
+        run: echo "::set-output name=PLAN::$(echo Hello, world!)"
 
       - uses: actions/github-script@0.9.0
         env:
