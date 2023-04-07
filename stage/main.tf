@@ -19,6 +19,7 @@ module "compute" {
 
   # Input Variables
   app_name = "web-app-1"
+  count    = 1
   #   environment_name = "production"
   #   instance_type    = "t2.micro"
   #   create_dns_zone  = true
