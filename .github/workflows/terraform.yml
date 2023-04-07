@@ -30,8 +30,6 @@ jobs:
           role-to-assume: arn:aws:iam::237435794960:role/Cognito_githubactionsAuth_Role
           role-session-name: samplerolesession
           aws-region: us-east-2
-        env:
-          AWS_PROFILE: dev-profile
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
@@ -51,7 +49,7 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         # Route 53 zone must already exist for this to succeed!
-        run: terraform plan -no-color
+        run: terraform plan -var pipeline=true -no-color
         continue-on-error: true
 
       - uses: actions/github-script@0.9.0
