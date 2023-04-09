@@ -23,3 +23,13 @@ variable "how_many" {
   type        = number
   default     = 1
 }
+
+variable "code" {
+  description = "code to deploy"
+  type        = string
+  default     = <<-EOF
+              #!/bin/bash
+              echo "Hello, World" > index.html
+              python3 -m http.server 8080 &
+              EOF
+}
